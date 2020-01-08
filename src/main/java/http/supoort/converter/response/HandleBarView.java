@@ -9,13 +9,13 @@ import http.model.response.ServletResponse;
 
 import java.io.IOException;
 
-public class HandleBarViewResolver extends AbstractViewResolver {
+public class HandleBarView extends AbstractView {
     private static final String PREFIX = "/templates";
     private static final String SUFFIX = ".html";
 
     private Handlebars handlebars;
 
-    public HandleBarViewResolver() {
+    public HandleBarView() {
         TemplateLoader loader = new ClassPathTemplateLoader();
         loader.setPrefix(PREFIX);
         loader.setSuffix(SUFFIX);

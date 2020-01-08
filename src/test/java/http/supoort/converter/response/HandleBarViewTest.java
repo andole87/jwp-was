@@ -13,8 +13,8 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class HandleBarViewResolverTest {
-    private ViewResolver viewResolver = new HandleBarViewResolver();
+class HandleBarViewTest {
+    private View view = new HandleBarView();
     private List<User> users;
 
     @BeforeEach
@@ -45,7 +45,7 @@ class HandleBarViewResolverTest {
 
         int size = outputStream.size();
 
-        viewResolver.render(servletResponse, outputStream);
+        view.render(servletResponse, outputStream);
 
         assertThat(outputStream.size()).isNotEqualTo(size);
     }

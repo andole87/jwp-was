@@ -4,6 +4,6 @@ import http.model.response.ServletResponse;
 
 import java.io.DataOutputStream;
 
-public interface ViewResolver {
+public interface View {
     void render(ServletResponse response, DataOutputStream dataOutputStream);
 }

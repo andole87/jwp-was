@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-public abstract class AbstractViewResolver implements ViewResolver {
-    private static final Logger log = LoggerFactory.getLogger(AbstractViewResolver.class);
+public abstract class AbstractView implements View {
+    private static final Logger log = LoggerFactory.getLogger(AbstractView.class);
     private static final String CONTENT_TYPE = "Content-Type";
     private static final String HTML_MIMETYPE = "text/html";
     private static final String CONTENT_LENGTH = "Content-Length";

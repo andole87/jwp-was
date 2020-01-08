@@ -7,9 +7,9 @@ import http.session.SessionManager;
 import http.supoort.RequestMapping;
 import http.supoort.converter.HttpMessageConverter;
 import http.supoort.converter.request.RequestConverter;
-import http.supoort.converter.response.HandleBarViewResolver;
+import http.supoort.converter.response.HandleBarView;
 import http.supoort.converter.response.ResponseConverter;
-import http.supoort.converter.response.ViewResolver;
+import http.supoort.converter.response.View;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -72,8 +72,8 @@ public class WebServer {
         return new HttpMessageConverter(new RequestConverter(), new ResponseConverter(initViewResolver()));
     }
 
-    private static ViewResolver initViewResolver() {
-        return new HandleBarViewResolver();
+    private static View initViewResolver() {
+        return new HandleBarView();
     }
 
     private static SessionManager initSessionManager() {

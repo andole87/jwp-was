@@ -21,10 +21,10 @@ public class ResponseConverter {
     private static final String CONTENT_TYPE = "Content-Type";
     private static final String CONTENT_LENGTH = "Content-Length";
     private static final String EXTENSION_SEPARATOR = ".";
-    private final ViewResolver viewResolver;
+    private final View view;
 
-    public ResponseConverter(ViewResolver viewResolver) {
-        this.viewResolver = viewResolver;
+    public ResponseConverter(View view) {
+        this.view = view;
     }
 
     public void convert(ServletResponse response) {
@@ -57,7 +57,7 @@ public class ResponseConverter {
         }
 
         if (response.hasModel()) {
-            viewResolver.render(response, dos);
+            view.render(response, dos);
             return;
         }
 
